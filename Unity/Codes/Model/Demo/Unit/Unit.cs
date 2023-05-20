@@ -9,6 +9,9 @@ namespace ET
         public int ConfigId; //配置表id
 
         [BsonIgnore]
+        public UnitType Type => (UnitType)this.Config.Type;
+
+        [BsonIgnore]
         public UnitConfig Config => UnitConfigCategory.Instance.Get(this.ConfigId);
 
         private WrapVector3 position = new WrapVector3(); //坐标
@@ -34,6 +37,7 @@ namespace ET
         }
 
         private WrapQuaternion rotation = new WrapQuaternion();
+
         public Quaternion Rotation
         {
             get => this.rotation.Value;

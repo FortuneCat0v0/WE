@@ -6,6 +6,14 @@
         public const int MoveTimer = 1001;
         public const int AITimer = 1002;
         public const int SessionAcceptTimeout = 1003;
+        
+        public const int AccountSessionCheckOutTime = 1004;
+
+        public const int PlayerOfflineOutTime = 1005;
+        
+        public const int NoticeUnitNumericTime = 1006;
+
+        public const int SaveChangeDBData = 1007;
         // 不能超过10000
     }
 }
