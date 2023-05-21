@@ -10,6 +10,8 @@ namespace ET
             self.InputControl = new PlayerInputControl();
             self.InputControl.Enable();
             // TODO 从配置表中读初始数值
+
+            self.InputControl.Gameplay.Jump.started += self.Jump;
         }
     }
 
@@ -41,7 +43,25 @@ namespace ET
 
         public static void Move(this PlayerControllerComponent self)
         {
-            self.Rigidbody2D.velocity = new Vector2(self.inputDirection.x * self.speed * Time.deltaTime, self.Rigidbody2D.velocity.y);
+            self.Rigidbody2D.velocity = new Vector2(self.inputDirection.x * self.speed, self.Rigidbody2D.velocity.y);
+
+            if (self.inputDirection.x > 0)
+            {
+                self.faceDir = false;
+            }
+
+            if (self.inputDirection.x < 0)
+            {
+                self.faceDir = true;
+            }
+
+            // 人物翻转
+            self.SpriteRenderer.flipX = self.faceDir;
+        }
+
+        public static void Jump(this PlayerControllerComponent self, InputAction.CallbackContext obj)
+        {
+            self.Rigidbody2D.AddForce(self.Transform.up * self.jumpForce, ForceMode2D.Impulse);
         }
     }
 }

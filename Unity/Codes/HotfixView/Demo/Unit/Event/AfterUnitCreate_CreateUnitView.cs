@@ -19,8 +19,12 @@ namespace ET
 
             args.Unit.AddComponent<GameObjectComponent>().GameObject = go;
             args.Unit.GetComponent<GameObjectComponent>().SpriteRenderer = go.GetComponent<SpriteRenderer>();
+            
             args.Unit.AddComponent<AnimatorComponent>();
+            
             args.Unit.AddComponent<PlayerControllerComponent>().Rigidbody2D = go.GetComponent<Rigidbody2D>();
+            args.Unit.GetComponent<PlayerControllerComponent>().SpriteRenderer = go.GetComponent<SpriteRenderer>();
+            args.Unit.GetComponent<PlayerControllerComponent>().Transform = go.GetComponent<Transform>();
 
             args.Unit.Position = args.Unit.Type == UnitType.Player? new Vector3(-1.5f, 10.0f, 0)
                     : new Vector3(1.5f, RandomHelper.RandomNumber(-1, 1), 0);
