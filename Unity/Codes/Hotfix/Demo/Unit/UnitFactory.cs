@@ -6,6 +6,7 @@ namespace ET
     {
         public static Unit Create(Scene currentScene, UnitInfo unitInfo)
         {
+            Log.Debug("开始创建Unit");
             UnitComponent unitComponent = currentScene.GetComponent<UnitComponent>();
             Unit unit = unitComponent.AddChildWithId<Unit, int>(unitInfo.UnitId, unitInfo.ConfigId);
             unitComponent.Add(unit);

@@ -96,7 +96,7 @@ namespace ET
             return (isNewUnit, unit);
         }
         public static async ETTask InitUnit(Unit unit, bool isNew)
-        {
+        { 
             // unit.GetComponent<NumericComponent>().SetNoEvent(NumericType.BattleRandomSeed,TimeHelper.ServerNow());
             await ETTask.CompletedTask;
         }
