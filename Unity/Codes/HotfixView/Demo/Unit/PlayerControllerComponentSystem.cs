@@ -7,10 +7,17 @@ namespace ET
     {
         public override void Awake(PlayerControllerComponent self)
         {
+            // 获取InputSystem
             self.InputControl = new PlayerInputControl();
             self.InputControl.Enable();
-            // TODO 从配置表中读初始数值
 
+            // TODO 从配置表中读初始数值
+            self.speed = 5f;
+            self.jumpForce = 20f;
+            self.checkRaduis = 0.5f;
+            self.groundLayer = LayerMask.GetMask("Ground");
+
+            // 注册按键
             self.InputControl.Gameplay.Jump.started += self.Jump;
         }
     }
@@ -21,6 +28,7 @@ namespace ET
         {
             self.inputDirection = self.InputControl.Gameplay.Move.ReadValue<Vector2>();
             self.Move();
+            self.Check();
         }
     }
 
@@ -61,7 +69,16 @@ namespace ET
 
         public static void Jump(this PlayerControllerComponent self, InputAction.CallbackContext obj)
         {
-            self.Rigidbody2D.AddForce(self.Transform.up * self.jumpForce, ForceMode2D.Impulse);
+            if (self.isGround)
+            {
+                self.Rigidbody2D.AddForce(self.Transform.up * self.jumpForce, ForceMode2D.Impulse);
+            }
+        }
+
+        public static void Check(this PlayerControllerComponent self)
+        {
+            // 检测地面
+            self.isGround = Physics2D.OverlapCircle(self.FootTransform.transform.position, self.checkRaduis, self.groundLayer);
         }
     }
 }

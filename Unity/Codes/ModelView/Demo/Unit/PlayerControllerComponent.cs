@@ -11,7 +11,12 @@ namespace ET
         public SpriteRenderer SpriteRenderer;
         public Transform Transform;
         public bool faceDir;
-        public float speed = 5f;
-        public float jumpForce = 20f;
+        public float speed;
+        public float jumpForce;
+
+        public Transform FootTransform;
+        public float checkRaduis;
+        public LayerMask groundLayer;
+        public bool isGround;
     }
 }
