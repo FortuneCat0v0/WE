@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace ET
@@ -72,6 +73,16 @@ namespace ET
                 self.faceDir = true;
             }
 
+            // 移动输入发生了变化，同步到服务器
+            if (Math.Abs(self.lastInputDirectionX - self.inputDirection.x) > 0.1f)
+            {
+                self.ZoneScene().GetComponent<SessionComponent>().Session.Send(new C2M_PlayerStateSynch()
+                {
+                    X = self.Transform.position.x, Y = self.Transform.position.y, InputDirectionX = self.inputDirection.x, Jump = false
+                });
+                self.lastInputDirectionX = self.inputDirection.x;
+            }
+
             // 人物翻转
             self.SpriteRenderer.flipX = self.faceDir;
         }
@@ -81,6 +92,12 @@ namespace ET
             if (self.isGround)
             {
                 self.Rigidbody2D.AddForce(self.Transform.up * self.jumpForce, ForceMode2D.Impulse);
+
+                // 同步跳跃指令
+                self.ZoneScene().GetComponent<SessionComponent>().Session.Send(new C2M_PlayerStateSynch()
+                {
+                    X = self.Transform.position.x, Y = self.Transform.position.y, InputDirectionX = self.inputDirection.x, Jump = true
+                });
             }
         }
 

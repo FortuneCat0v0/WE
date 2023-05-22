@@ -768,7 +768,7 @@ PlayerSettings:
     iPhone: 1
   scriptingBackend:
     Android: 0
-    Standalone: 1
+    Standalone: 0
     iPhone: 1
   il2cppCompilerConfiguration: {}
   managedStrippingLevel:
@@ -780,7 +780,7 @@ PlayerSettings:
     PS4: 1
     PS5: 1
     Stadia: 1
-    Standalone: 1
+    Standalone: 0
     WebGL: 1
     Windows Store Apps: 1
     XboxOne: 1
@@ -803,7 +803,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: Unity
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -811,7 +811,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Unity
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: ET
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

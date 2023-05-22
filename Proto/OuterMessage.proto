@@ -396,3 +396,27 @@ message A2C_CreateRole // IResponse
 	string Message = 92;
 	RoleInfoProto RoleInfo = 1;
 }
+
+message C2M_PlayerStateSynch // IActorLocationMessage
+{
+	int32 RpcId = 90;
+
+	float X = 1;
+	float Y = 2;
+	float InputDirectionX = 4;
+	bool Jump = 5;
+}
+
+message M2C_PlayerStateSynch // IActorMessage
+{
+	int64 UnitId = 20;
+	float X = 1;
+	float Y = 2;
+	float InputDirectionX = 4;
+	bool Jump = 5;
+}
+
+message M2C_CreateOtherUnit // IActorMessage
+{
+	UnitInfo Unit = 1;
+}

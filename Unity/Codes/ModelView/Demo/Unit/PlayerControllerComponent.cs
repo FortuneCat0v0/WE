@@ -20,5 +20,8 @@ namespace ET
         public bool isGround;
 
         public AnimatorComponent AnimatorComponent;
+        
+        // 同步相关
+        public float lastInputDirectionX;
     }
 }

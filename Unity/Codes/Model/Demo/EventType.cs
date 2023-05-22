@@ -94,7 +94,12 @@ namespace ET
             public Scene ZoneScene;
         }
 
-        public struct AfterUnitCreate
+        public struct AfterPlayerCreate
+        {
+            public Unit Unit;
+        }
+
+        public struct AfterOtherPlayerCreate
         {
             public Unit Unit;
         }

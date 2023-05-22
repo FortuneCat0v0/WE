@@ -51,5 +51,8 @@ namespace ET
 		 public const ushort G2C_EnterGame = 10048;
 		 public const ushort C2A_CreateRole = 10049;
 		 public const ushort A2C_CreateRole = 10050;
+		 public const ushort C2M_PlayerStateSynch = 10051;
+		 public const ushort M2C_PlayerStateSynch = 10052;
+		 public const ushort M2C_CreateOtherUnit = 10053;
 	}
 }

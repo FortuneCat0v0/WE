@@ -7,7 +7,8 @@
         "Unity.Model",
         "Unity.Hotfix",
         "Unity.ModelView",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [
         "Editor"

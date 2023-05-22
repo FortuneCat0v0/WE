@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ET
@@ -14,7 +15,7 @@ namespace ET
 
             unitComponent.AddChild(unit);
             unitComponent.Add(unit);
-            
+
             unit.AddComponent<UnitDBSaveComponent>();
 
             foreach (Entity entity in request.Entitys)
@@ -35,6 +36,21 @@ namespace ET
 
             // 加入aoi
             // unit.AddComponent<AOIEntity, int, Vector3>(9 * 1000, unit.Position);
+
+            // TODO 测试
+            // 通知其他玩家，有玩家进入，创建其他玩家对象
+            foreach (KeyValuePair<long, Entity> unitComponentChild in unitComponent.Children)
+            {
+                if (unitComponentChild.Key != unit.Id)
+                {
+                    // 加入其他玩家
+                    MessageHelper.SendToClient((Unit)unitComponentChild.Value,
+                        new M2C_CreateOtherUnit() { Unit = UnitHelper.CreateUnitInfo(unit) });
+                    // 其他玩家进入我
+                    MessageHelper.SendToClient(unit,
+                        new M2C_CreateOtherUnit() { Unit = UnitHelper.CreateUnitInfo((Unit)unitComponentChild.Value) });
+                }
+            }
 
             response.NewInstanceId = unit.InstanceId;
 

@@ -835,4 +835,55 @@ namespace ET
 
 	}
 
+	[Message(OuterOpcode.C2M_PlayerStateSynch)]
+	[ProtoContract]
+	public partial class C2M_PlayerStateSynch: Object, IActorLocationMessage
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(1)]
+		public float X { get; set; }
+
+		[ProtoMember(2)]
+		public float Y { get; set; }
+
+		[ProtoMember(4)]
+		public float InputDirectionX { get; set; }
+
+		[ProtoMember(5)]
+		public bool Jump { get; set; }
+
+	}
+
+	[Message(OuterOpcode.M2C_PlayerStateSynch)]
+	[ProtoContract]
+	public partial class M2C_PlayerStateSynch: Object, IActorMessage
+	{
+		[ProtoMember(20)]
+		public long UnitId { get; set; }
+
+		[ProtoMember(1)]
+		public float X { get; set; }
+
+		[ProtoMember(2)]
+		public float Y { get; set; }
+
+		[ProtoMember(4)]
+		public float InputDirectionX { get; set; }
+
+		[ProtoMember(5)]
+		public bool Jump { get; set; }
+
+	}
+
+	[Message(OuterOpcode.M2C_CreateOtherUnit)]
+	[ProtoContract]
+	public partial class M2C_CreateOtherUnit: Object, IActorMessage
+	{
+		[ProtoMember(1)]
+		public UnitInfo Unit { get; set; }
+
+	}
+
 }
