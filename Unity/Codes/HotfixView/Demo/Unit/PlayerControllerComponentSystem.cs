@@ -7,6 +7,14 @@ namespace ET
     {
         public override void Awake(PlayerControllerComponent self)
         {
+            GameObject go = self.GetParent<Unit>().GetComponent<GameObjectComponent>().GameObject;
+            self.Rigidbody2D = go.GetComponent<Rigidbody2D>();
+            self.SpriteRenderer = go.GetComponent<SpriteRenderer>();
+            self.Transform = go.GetComponent<Transform>();
+            self.FootTransform =
+                    (go.GetComponent<ReferenceCollector>().GetObject("FootPosition") as GameObject).GetComponent<Transform>();
+            self.AnimatorComponent = self.GetParent<Unit>().GetComponent<AnimatorComponent>();
+
             // 获取InputSystem
             self.InputControl = new PlayerInputControl();
             self.InputControl.Enable();
@@ -29,6 +37,7 @@ namespace ET
             self.inputDirection = self.InputControl.Gameplay.Move.ReadValue<Vector2>();
             self.Move();
             self.Check();
+            self.SetAnimation();
         }
     }
 
@@ -79,6 +88,11 @@ namespace ET
         {
             // 检测地面
             self.isGround = Physics2D.OverlapCircle(self.FootTransform.transform.position, self.checkRaduis, self.groundLayer);
+        }
+
+        public static void SetAnimation(this PlayerControllerComponent self)
+        {
+            self.AnimatorComponent.SetFloatValue("velocityX", Mathf.Abs(self.Rigidbody2D.velocity.x));
         }
     }
 }

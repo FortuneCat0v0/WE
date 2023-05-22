@@ -43,9 +43,10 @@ GameObject:
   - component: {fileID: 3593415188419203649}
   - component: {fileID: 6064700875945736270}
   - component: {fileID: 3094807925825984052}
+  - component: {fileID: 7147358244333311981}
   - component: {fileID: 6686988926207843488}
   m_Layer: 0
-  m_Name: TestRole01
+  m_Name: PinkMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,6 +158,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.114094734}
   m_Size: {x: 0.52486753, y: 0.77953196}
   m_Direction: 0
+--- !u!95 &7147358244333311981
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7946093871968448438}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d66e8d172779ac47a1afc4b76525ae1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &6686988926207843488
 MonoBehaviour:
   m_ObjectHideFlags: 0

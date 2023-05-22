@@ -18,5 +18,7 @@ namespace ET
         public float checkRaduis;
         public LayerMask groundLayer;
         public bool isGround;
+
+        public AnimatorComponent AnimatorComponent;
     }
 }
