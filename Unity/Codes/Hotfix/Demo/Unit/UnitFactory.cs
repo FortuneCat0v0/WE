@@ -50,6 +50,12 @@ namespace ET
         {
             Log.Debug("开始创建其它玩家");
             UnitComponent unitComponent = currentScene.GetComponent<UnitComponent>();
+            if (unitComponent.Get(unitInfo.UnitId) != null)
+            {
+                Log.Debug("已经存在Unit");
+                return null;
+            }
+
             Unit unit = unitComponent.AddChildWithId<Unit, int>(unitInfo.UnitId, unitInfo.ConfigId);
             unitComponent.Add(unit);
 
@@ -84,7 +90,7 @@ namespace ET
 
             // unit.AddComponent<XunLuoPathComponent>();
 
-            Game.EventSystem.PublishAsync(new EventType.AfterOtherPlayerCreate{ Unit = unit }).Coroutine();
+            Game.EventSystem.PublishAsync(new EventType.AfterOtherPlayerCreate { Unit = unit }).Coroutine();
             return unit;
         }
     }

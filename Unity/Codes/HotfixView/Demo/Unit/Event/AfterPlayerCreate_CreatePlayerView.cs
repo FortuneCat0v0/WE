@@ -16,6 +16,7 @@ namespace ET
                     (GameObject)ResourcesComponent.Instance.GetAsset($"{args.Unit.Config.PrefabName}.unity3d", args.Unit.Config.PrefabName);
             GameObject go = UnityEngine.Object.Instantiate(bundleGameObject);
             go.transform.SetParent(GlobalComponent.Instance.Unit, true);
+            go.name = "本地玩家";
 
             args.Unit.AddComponent<GameObjectComponent>().GameObject = go;
             args.Unit.GetComponent<GameObjectComponent>().SpriteRenderer = go.GetComponent<SpriteRenderer>();

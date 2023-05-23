@@ -16,7 +16,7 @@ namespace ET.WE.Handler
                     MessageHelper.SendToClient((Unit)unitComponentChild.Value,
                         new M2C_PlayerStateSynch()
                         {
-                            UnitId = unitComponentChild.Key,
+                            UnitId = unit.Id,
                             X = message.X,
                             Y = message.Y,
                             InputDirectionX = message.InputDirectionX,

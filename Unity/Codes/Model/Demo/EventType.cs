@@ -113,5 +113,22 @@ namespace ET
         {
             public Unit Unit;
         }
+        
+        public class OtherPlayerChangeState: DisposeObject
+        {
+            public static readonly OtherPlayerChangeState Instance = new OtherPlayerChangeState();
+
+            public Unit Unit;
+            public float X;
+            public float Y;
+            public float InputDirectionX;
+            public bool Jump;
+
+            // 因为是重复利用的，所以用完PublishClass会调用Dispose
+            public override void Dispose()
+            {
+                this.Unit = null;
+            }
+        }
     }
 }
