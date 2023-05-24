@@ -12,6 +12,7 @@
 		Account = 7,
 		LoginCenter = 8,
 		UnitCache = 9,
+		ChatInfo = 10,
 		// 客户端Model层
 		Client = 30,
 		Zone = 31,

@@ -21,9 +21,5 @@
         public Session ClientSession { get; set; }
 
         public long ChatInfoInstanceId { get; set; }
-
-        public bool IsMatching { get; set; }
-
-        public long GamerInstanceId { get; set; }
     }
 }

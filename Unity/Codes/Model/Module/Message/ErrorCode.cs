@@ -35,5 +35,6 @@ namespace ET
         public const int ERR_ReEnterGameError2       = 200021; 
         public const int ERR_EnterGameError          = 200022;
         public const int ERR_SessionStateError       = 200023;
+        public const int ERR_ChatMessageEmpty        = 200024; //聊天信息为空
     }
 }

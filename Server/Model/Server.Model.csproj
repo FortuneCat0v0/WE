@@ -38,6 +38,10 @@
       <Link>Demo\Unit\UnitType.cs</Link>
     </Compile>
 
+    <Compile Include="..\..\Unity\Codes\Model\Module\Actor\IActorChatInfoMessage.cs">
+      <Link>Module\Actor\IActorChatInfoMessage.cs</Link>
+    </Compile>
+
     <Compile Include="..\..\Unity\Codes\Model\Module\Recast\**\*.cs">
       <Link>Module\Recast\%(RecursiveDir)%(FileName)%(Extension)</Link>
     </Compile>

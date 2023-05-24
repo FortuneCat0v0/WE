@@ -130,5 +130,10 @@ namespace ET
                 this.Unit = null;
             }
         }
+        
+        public struct UpdateChatInfo
+        {
+            public Scene ZoneScene;
+        }
     }
 }

@@ -51,6 +51,9 @@ namespace ET
                 case SceneType.UnitCache:
                     scene.AddComponent<UnitCacheComponent>();
                     break;
+                case SceneType.ChatInfo:
+                    scene.AddComponent<ChatInfoUnitsComponent>();
+                    break;
             }
 
             return scene;

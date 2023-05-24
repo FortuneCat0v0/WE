@@ -10,5 +10,7 @@ namespace ET
         WindowID_Helper,   //提示界面
     	WindowID_MainMenu, //主菜单
 		WindowID_RegisterRole,
+		WindowID_Chat,
+		WindowID_Main
 	}
 }

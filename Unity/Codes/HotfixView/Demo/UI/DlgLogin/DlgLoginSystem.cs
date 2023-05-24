@@ -85,12 +85,15 @@ namespace ET
                         Log.Error(errorCode.ToString());
                         return;
                     }
+                    self.ZoneScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Main);
                 }
                 else
                 {
                     // 不存在则要求新创建一个
                     self.ZoneScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_RegisterRole);
                 }
+
+                self.ZoneScene().GetComponent<UIComponent>().HideWindow(WindowID.WindowID_Login);
             }
             catch (Exception e)
             {

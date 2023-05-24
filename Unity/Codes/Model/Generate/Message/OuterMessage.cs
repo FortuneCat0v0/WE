@@ -886,4 +886,44 @@ namespace ET
 
 	}
 
+	[ResponseType(nameof(Chat2C_SendChatInfo))]
+	[Message(OuterOpcode.C2Chat_SendChatInfo)]
+	[ProtoContract]
+	public partial class C2Chat_SendChatInfo: Object, IActorChatInfoRequest
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(2)]
+		public string ChatMessage { get; set; }
+
+	}
+
+	[Message(OuterOpcode.Chat2C_SendChatInfo)]
+	[ProtoContract]
+	public partial class Chat2C_SendChatInfo: Object, IActorChatInfoResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+	}
+
+	[Message(OuterOpcode.Chat2C_NoticeChatInfo)]
+	[ProtoContract]
+	public partial class Chat2C_NoticeChatInfo: Object, IActorMessage
+	{
+		[ProtoMember(1)]
+		public string Name { get; set; }
+
+		[ProtoMember(2)]
+		public string ChatMessage { get; set; }
+
+	}
+
 }

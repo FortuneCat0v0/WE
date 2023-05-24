@@ -96,12 +96,12 @@ namespace ET
                     {
                         //从数据库或者缓存中加载出Unit实体及其相关组件
                         (bool isNewPlayer, Unit unit) = await UnitHelper.LoadUnit(player);
-                        
+
                         //存储Player的InstanceId，当从服务器通过Unit发消息给客户端时，先发送给网关上对应的Player，
                         //再通过Player上引用的ClientSession转发给客户端(SessionStreamDispatcherServerInner)
                         unit.AddComponent<UnitGateComponent, long>(player.InstanceId);
 
-                        // player.ChatInfoInstanceId = await this.EnterWorldChatServer(unit); //登录聊天服
+                        player.ChatInfoInstanceId = await this.EnterWorldChatServer(unit); //登录聊天服
 
                         //玩家Unit上线后的初始化操作
                         await UnitHelper.InitUnit(unit, isNewPlayer);
@@ -133,17 +133,18 @@ namespace ET
             }
         }
 
-        // private async ETTask<long> EnterWorldChatServer(Unit unit)
-        // {
-        //     StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(unit.DomainZone(), "ChatInfo");
-        //     Chat2G_EnterChat chat2GEnterChat = (Chat2G_EnterChat)await MessageHelper.CallActor(startSceneConfig.InstanceId, new G2Chat_EnterChat()
-        //     {
-        //         UnitId           = unit.Id,
-        //         Name             = unit.GetComponent<RoleInfo>().Name,
-        //         GateSessionActorId = unit.GetComponent<UnitGateComponent>().GateSessionActorId
-        //     });
-        //
-        //     return chat2GEnterChat.ChatInfoUnitInstanceId;
-        // }
+        private async ETTask<long> EnterWorldChatServer(Unit unit)
+        {
+            StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(unit.DomainZone(), "ChatInfo");
+            Chat2G_EnterChat chat2GEnterChat = (Chat2G_EnterChat)await MessageHelper.CallActor(startSceneConfig.InstanceId,
+                new G2Chat_EnterChat()
+                {
+                    UnitId = unit.Id,
+                    Name = unit.GetComponent<RoleInfo>().Name,
+                    GateSessionActorId = unit.GetComponent<UnitGateComponent>().GateSessionActorId
+                });
+
+            return chat2GEnterChat.ChatInfoUnitInstanceId;
+        }
     }
 }

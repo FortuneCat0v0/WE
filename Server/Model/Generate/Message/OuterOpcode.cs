@@ -54,5 +54,8 @@ namespace ET
 		 public const ushort C2M_PlayerStateSynch = 10051;
 		 public const ushort M2C_PlayerStateSynch = 10052;
 		 public const ushort M2C_CreateOtherUnit = 10053;
+		 public const ushort C2Chat_SendChatInfo = 10054;
+		 public const ushort Chat2C_SendChatInfo = 10055;
+		 public const ushort Chat2C_NoticeChatInfo = 10056;
 	}
 }

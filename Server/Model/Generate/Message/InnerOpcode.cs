@@ -44,5 +44,9 @@ namespace ET
 		 public const ushort Other2UnitCache_GetUnit = 20041;
 		 public const ushort Other2UnitCache_DeleteUnit = 20042;
 		 public const ushort UnitCache2Other_DeleteUnit = 20043;
+		 public const ushort G2Chat_EnterChat = 20044;
+		 public const ushort Chat2G_EnterChat = 20045;
+		 public const ushort G2Chat_RequestExitChat = 20046;
+		 public const ushort Chat2G_RequestExitChat = 20047;
 	}
 }

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace ET
 {
-    [FriendClass(typeof(SessionPlayerComponent))]
+    [FriendClass(typeof (SessionPlayerComponent))]
     [SessionStreamDispatcher(SessionStreamDispatcherType.SessionStreamDispatcherServerOuter)]
     public class SessionStreamDispatcherServerOuter: ISessionStreamDispatcher
     {
@@ -20,10 +20,10 @@ namespace ET
             }
 
             OpcodeHelper.LogMsg(session.DomainZone(), opcode, message);
-			
+
             DispatchAsync(session, opcode, message).Coroutine();
         }
-		
+
         public async ETTask DispatchAsync(Session session, ushort opcode, object message)
         {
             // 根据消息接口判断是不是Actor消息，不同的接口做不同的处理
@@ -41,6 +41,7 @@ namespace ET
                     {
                         session.Reply(response);
                     }
+
                     break;
                 }
                 case IActorLocationMessage actorLocationMessage:
@@ -49,15 +50,46 @@ namespace ET
                     ActorLocationSenderComponent.Instance.Send(unitId, actorLocationMessage);
                     break;
                 }
-                case IActorRequest actorRequest:  // 分发IActorRequest消息，目前没有用到，需要的自己添加
+                case IActorChatInfoRequest actorChatInfoRequest:
+                {
+                    Player player = Game.EventSystem.Get(session.GetComponent<SessionPlayerComponent>().PlayerInstanceId) as Player;
+                    if (player == null || player.IsDisposed || player.ChatInfoInstanceId == 0)
+                    {
+                        break;
+                    }
+
+                    int rpcId = actorChatInfoRequest.RpcId; // 这里要保存客户端的rpcId
+                    long instanceId = session.InstanceId;
+                    IResponse response = await ActorMessageSenderComponent.Instance.Call(player.ChatInfoInstanceId, actorChatInfoRequest);
+                    response.RpcId = rpcId;
+                    // session可能已经断开了，所以这里需要判断
+                    if (session.InstanceId == instanceId)
+                    {
+                        session.Reply(response);
+                    }
+
+                    break;
+                }
+                case IActorChatInfoMessage actorChatInfoMessage:
+                {
+                    Player player = Game.EventSystem.Get(session.GetComponent<SessionPlayerComponent>().PlayerInstanceId) as Player;
+                    if (player == null || player.IsDisposed || player.ChatInfoInstanceId == 0)
+                    {
+                        break;
+                    }
+
+                    ActorMessageSenderComponent.Instance.Send(player.ChatInfoInstanceId, actorChatInfoMessage);
+                    break;
+                }
+                case IActorRequest actorRequest: // 分发IActorRequest消息，目前没有用到，需要的自己添加
                 {
                     break;
                 }
-                case IActorMessage actorMessage:  // 分发IActorMessage消息，目前没有用到，需要的自己添加
+                case IActorMessage actorMessage: // 分发IActorMessage消息，目前没有用到，需要的自己添加
                 {
                     break;
                 }
-				
+
                 default:
                 {
                     // 非Actor消息
