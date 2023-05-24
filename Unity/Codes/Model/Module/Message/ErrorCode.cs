@@ -36,5 +36,8 @@ namespace ET
         public const int ERR_EnterGameError          = 200022;
         public const int ERR_SessionStateError       = 200023;
         public const int ERR_ChatMessageEmpty        = 200024; //聊天信息为空
+        public const int ERR_RoomPlayingError        = 200025; //房间游戏中
+        public const int ERR_RoomIsFullError         = 200026; //房间人数满了
+        public const int ERR_RoomHavedPlayer         = 200027; //房间已经存在该玩家
     }
 }

@@ -5,6 +5,7 @@
         public static async ETTask Transfer(Unit unit, long sceneInstanceId, string sceneName)
         {
             // 通知客户端开始切场景
+            // TODO 传递房间数据库信息
             M2C_StartSceneChange m2CStartSceneChange = new M2C_StartSceneChange() { SceneInstanceId = sceneInstanceId, SceneName = sceneName };
             MessageHelper.SendToClient(unit, m2CStartSceneChange);
 
