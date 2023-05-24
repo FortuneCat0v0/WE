@@ -926,4 +926,56 @@ namespace ET
 
 	}
 
+	[Message(OuterOpcode.RoomInfo)]
+	[ProtoContract]
+	public partial class RoomInfo: Object
+	{
+		[ProtoMember(1)]
+		public long RoomId { get; set; }
+
+		[ProtoMember(2)]
+		public string Pattern { get; set; }
+
+		[ProtoMember(3)]
+		public int NowNum { get; set; }
+
+		[ProtoMember(4)]
+		public int MaxNum { get; set; }
+
+		[ProtoMember(5)]
+		public int RoomState { get; set; }
+
+		[ProtoMember(6)]
+		public string Intro { get; set; }
+
+	}
+
+	[ResponseType(nameof(M2C_RequestRoomInfos))]
+	[Message(OuterOpcode.C2M_RequestRoomInfos)]
+	[ProtoContract]
+	public partial class C2M_RequestRoomInfos: Object, IActorLocationRequest
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+	}
+
+	[Message(OuterOpcode.M2C_RequestRoomInfos)]
+	[ProtoContract]
+	public partial class M2C_RequestRoomInfos: Object, IActorLocationResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+		[ProtoMember(1)]
+		public List<RoomInfo> RoomInfos = new List<RoomInfo>();
+
+	}
+
 }

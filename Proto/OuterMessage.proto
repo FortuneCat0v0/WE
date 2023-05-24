@@ -440,3 +440,27 @@ message Chat2C_NoticeChatInfo // IActorMessage
 	string Name = 1;
 	string ChatMessage = 2;
 }
+
+message RoomInfo
+{
+	int64 RoomId = 1;
+	string Pattern = 2;
+	int NowNum = 3;
+	int MaxNum = 4;
+	int RoomState = 5;
+	string Intro = 6;
+}
+
+//ResponseType M2C_RequestRoomInfos
+message C2M_RequestRoomInfos // IActorLocationRequest
+{
+	int32 RpcId = 1;
+}
+
+message M2C_RequestRoomInfos // IActorLocationResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+	repeated RoomInfo RoomInfos = 1;
+}

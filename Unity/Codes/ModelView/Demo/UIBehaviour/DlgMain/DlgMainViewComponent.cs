@@ -75,12 +75,48 @@ namespace ET
      		}
      	}
 
+		public UnityEngine.UI.Button E_FormButton
+     	{
+     		get
+     		{
+     			if (this.uiTransform == null)
+     			{
+     				Log.Error("uiTransform is null.");
+     				return null;
+     			}
+     			if( this.m_E_FormButton == null )
+     			{
+		    		this.m_E_FormButton = UIFindHelper.FindDeepChild<UnityEngine.UI.Button>(this.uiTransform.gameObject,"E_Form");
+     			}
+     			return this.m_E_FormButton;
+     		}
+     	}
+
+		public UnityEngine.UI.Image E_FormImage
+     	{
+     		get
+     		{
+     			if (this.uiTransform == null)
+     			{
+     				Log.Error("uiTransform is null.");
+     				return null;
+     			}
+     			if( this.m_E_FormImage == null )
+     			{
+		    		this.m_E_FormImage = UIFindHelper.FindDeepChild<UnityEngine.UI.Image>(this.uiTransform.gameObject,"E_Form");
+     			}
+     			return this.m_E_FormImage;
+     		}
+     	}
+
 		public void DestroyWidget()
 		{
 			this.m_E_ChatButton = null;
 			this.m_E_ChatImage = null;
 			this.m_E_SettingButton = null;
 			this.m_E_SettingImage = null;
+			this.m_E_FormButton = null;
+			this.m_E_FormImage = null;
 			this.uiTransform = null;
 		}
 
@@ -88,6 +124,8 @@ namespace ET
 		private UnityEngine.UI.Image m_E_ChatImage = null;
 		private UnityEngine.UI.Button m_E_SettingButton = null;
 		private UnityEngine.UI.Image m_E_SettingImage = null;
+		private UnityEngine.UI.Button m_E_FormButton = null;
+		private UnityEngine.UI.Image m_E_FormImage = null;
 		public Transform uiTransform = null;
 	}
 }

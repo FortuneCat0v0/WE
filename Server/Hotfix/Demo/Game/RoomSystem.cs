@@ -119,6 +119,12 @@ namespace ET
             }
         }
 
+        /// <summary>
+        /// 广播消息，除了自己
+        /// </summary>
+        /// <param name="self"></param>
+        /// <param name="message"></param>
+        /// <param name="myId"></param>
         public static void BroadcastNoSelf(this Room self, IActorMessage message, long myId)
         {
             foreach (Unit unit in self.Units.Values)
@@ -128,6 +134,17 @@ namespace ET
                     MessageHelper.SendActor(unit.GetComponent<UnitGateComponent>().GateSessionActorId, message);
                 }
             }
+        }
+
+        public static RoomInfo ToProto(this Room self)
+        {
+            RoomInfo roomInfo = new RoomInfo();
+            roomInfo.Pattern = "普通模式";
+            roomInfo.NowNum = self.Units.Count;
+            roomInfo.MaxNum = self.maxPlayerNum;
+            roomInfo.RoomState = (int)self.State;
+            roomInfo.Intro = "这是一个测试房间";
+            return roomInfo;
         }
     }
 }

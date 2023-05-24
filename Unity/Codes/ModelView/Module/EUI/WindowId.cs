@@ -11,6 +11,7 @@ namespace ET
     	WindowID_MainMenu, //主菜单
 		WindowID_RegisterRole,
 		WindowID_Chat,
-		WindowID_Main
+		WindowID_Main,
+		WindowID_Form,
 	}
 }

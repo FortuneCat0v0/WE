@@ -5,7 +5,7 @@ namespace ET
     /// <summary>
     /// 房间状态
     /// </summary>
-    public enum RoomState: byte
+    public enum RoomState
     {
         Idle,
         Ready,

@@ -12,6 +12,7 @@ namespace ET
         public static void RegisterUIEvent(this DlgMain self)
         {
             self.View.E_ChatButton.AddListener(self.OnChatHandler);
+            self.View.E_FormButton.AddListener(self.OnFormHandler);
         }
 
         public static void ShowWindow(this DlgMain self, Entity contextData = null)
@@ -21,6 +22,11 @@ namespace ET
         public static void OnChatHandler(this DlgMain self)
         {
             self.ZoneScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Chat);
+        }
+
+        public static void OnFormHandler(this DlgMain self)
+        {
+            self.ZoneScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Form);
         }
     }
 }

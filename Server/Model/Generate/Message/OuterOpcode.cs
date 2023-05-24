@@ -57,5 +57,8 @@ namespace ET
 		 public const ushort C2Chat_SendChatInfo = 10054;
 		 public const ushort Chat2C_SendChatInfo = 10055;
 		 public const ushort Chat2C_NoticeChatInfo = 10056;
+		 public const ushort RoomInfo = 10057;
+		 public const ushort C2M_RequestRoomInfos = 10058;
+		 public const ushort M2C_RequestRoomInfos = 10059;
 	}
 }
