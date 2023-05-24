@@ -21,9 +21,10 @@ namespace ET
             
             args.Unit.AddComponent<OtherPlayerControllerComponent>();
 
+            go.transform.position = Vector3.zero;
             // TODO 根据关卡配置表，设置初始位置
-            args.Unit.Position = args.Unit.Type == UnitType.Player? new Vector3(3f, 5.0f, 0)
-                    : new Vector3(1.5f, RandomHelper.RandomNumber(-1, 1), 0);
+            // args.Unit.Position = args.Unit.Type == UnitType.Player? new Vector3(3f, 5.0f, 0)
+            //         : new Vector3(1.5f, RandomHelper.RandomNumber(-1, 1), 0);
 
             await ETTask.CompletedTask;
         }

@@ -25,8 +25,11 @@ namespace ET
 
             args.Unit.AddComponent<PlayerControllerComponent>();
 
-            args.Unit.Position = args.Unit.Type == UnitType.Player? new Vector3(-1.5f, 10.0f, 0)
-                    : new Vector3(1.5f, RandomHelper.RandomNumber(-1, 1), 0);
+            args.Unit.AddComponent<PlayerToHallInteractionComponent, GameObject>(go);
+
+            go.transform.position = Vector3.zero;
+            // args.Unit.Position = args.Unit.Type == UnitType.Player? new Vector3(-1.5f, 10.0f, 0)
+            //         : new Vector3(1.5f, RandomHelper.RandomNumber(-1, 1), 0);
 
             await ETTask.CompletedTask;
         }

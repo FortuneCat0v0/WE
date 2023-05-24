@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 3094807925825984052}
   - component: {fileID: 7147358244333311981}
   - component: {fileID: 6686988926207843488}
+  - component: {fileID: -5629640349139066737}
   m_Layer: 0
   m_Name: PinkMan
   m_TagString: Untagged
@@ -194,3 +195,15 @@ MonoBehaviour:
   data:
   - key: FootPosition
     gameObject: {fileID: 3848856243680830736}
+--- !u!114 &-5629640349139066737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7946093871968448438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8586b6cd3b9ae4d95fb129e4b5a1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
