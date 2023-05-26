@@ -42,6 +42,14 @@ namespace ET
         }
     }
 
+    public class PlayerControllerComponentDestorySystem: DestroySystem<PlayerControllerComponent>
+    {
+        public override void Destroy(PlayerControllerComponent self)
+        {
+            self.InputControl.Disable();
+        }
+    }
+
     [FriendClass(typeof (PlayerControllerComponent))]
     public static class PlayerControllerComponentSystem
     {

@@ -60,5 +60,7 @@ namespace ET
 		 public const ushort RoomInfo = 10057;
 		 public const ushort C2M_RequestRoomInfos = 10058;
 		 public const ushort M2C_RequestRoomInfos = 10059;
+		 public const ushort C2M_RequestJoinRoom = 10060;
+		 public const ushort M2C_RequestJoinRoom = 10061;
 	}
 }

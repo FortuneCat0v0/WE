@@ -139,6 +139,7 @@ namespace ET
         public static RoomInfo ToProto(this Room self)
         {
             RoomInfo roomInfo = new RoomInfo();
+            roomInfo.RoomId = self.Id;
             roomInfo.Pattern = "普通模式";
             roomInfo.NowNum = self.Units.Count;
             roomInfo.MaxNum = self.maxPlayerNum;

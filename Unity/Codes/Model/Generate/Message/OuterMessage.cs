@@ -978,4 +978,32 @@ namespace ET
 
 	}
 
+	[ResponseType(nameof(M2C_RequestJoinRoom))]
+	[Message(OuterOpcode.C2M_RequestJoinRoom)]
+	[ProtoContract]
+	public partial class C2M_RequestJoinRoom: Object, IActorLocationRequest
+	{
+		[ProtoMember(1)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(2)]
+		public long RoomId { get; set; }
+
+	}
+
+	[Message(OuterOpcode.M2C_RequestJoinRoom)]
+	[ProtoContract]
+	public partial class M2C_RequestJoinRoom: Object, IActorLocationResponse
+	{
+		[ProtoMember(90)]
+		public int RpcId { get; set; }
+
+		[ProtoMember(91)]
+		public int Error { get; set; }
+
+		[ProtoMember(92)]
+		public string Message { get; set; }
+
+	}
+
 }

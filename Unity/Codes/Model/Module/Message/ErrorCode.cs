@@ -39,5 +39,6 @@ namespace ET
         public const int ERR_RoomPlayingError        = 200025; //房间游戏中
         public const int ERR_RoomIsFullError         = 200026; //房间人数满了
         public const int ERR_RoomHavedPlayer         = 200027; //房间已经存在该玩家
+        public const int ERR_RoomIsNull              = 200028; //不存在该房间
     }
 }

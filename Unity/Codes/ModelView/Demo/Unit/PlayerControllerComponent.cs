@@ -3,7 +3,7 @@
 namespace ET
 {
     [ComponentOf(typeof (Unit))]
-    public class PlayerControllerComponent: Entity, IAwake, IUpdate
+    public class PlayerControllerComponent: Entity, IAwake, IUpdate, IDestroy
     {
         public PlayerInputControl InputControl;
         public Vector2 inputDirection;
@@ -20,7 +20,7 @@ namespace ET
         public bool isGround;
 
         public AnimatorComponent AnimatorComponent;
-        
+
         // 同步相关
         public float lastInputDirectionX;
     }

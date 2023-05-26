@@ -20,5 +20,6 @@ namespace ET
         public Dictionary<int, Scroll_Item_form> ScrollItemForms;
 
         public List<RoomInfo> RoomInfos = new List<RoomInfo>();
+        
     }
 }
