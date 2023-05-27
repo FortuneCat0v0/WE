@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Cinemachine;
+using TMPro;
 using UnityEngine;
 
 namespace ET
@@ -36,6 +37,10 @@ namespace ET
             go.transform.position = Vector3.zero;
             // args.Unit.Position = args.Unit.Type == UnitType.Player? new Vector3(-1.5f, 10.0f, 0)
             //         : new Vector3(1.5f, RandomHelper.RandomNumber(-1, 1), 0);
+
+            // 添加相机跟随
+            // CinemachineBrain cinemachineBrain = GameObject.Find("/Global/MainCamera").AddComponent<CinemachineBrain>();
+            GameObject.Find("/Global/CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = go.transform;
 
             await ETTask.CompletedTask;
         }

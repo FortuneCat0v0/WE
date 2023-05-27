@@ -8,7 +8,8 @@
         "Unity.Hotfix",
         "Unity.ModelView",
         "Unity.InputSystem",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Cinemachine"
     ],
     "includePlatforms": [
         "Editor"
