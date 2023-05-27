@@ -1,4 +1,5 @@
 ﻿using ET.EventType;
+using TMPro;
 using UnityEngine;
 
 namespace ET
@@ -17,8 +18,10 @@ namespace ET
             args.Unit.AddComponent<GameObjectComponent>().GameObject = go;
             args.Unit.GetComponent<GameObjectComponent>().SpriteRenderer = go.GetComponent<SpriteRenderer>();
 
+            (go.GetComponent<ReferenceCollector>().GetObject("NameText") as GameObject).GetComponent<TextMeshPro>().text = args.Name;
+
             args.Unit.AddComponent<AnimatorComponent>();
-            
+
             args.Unit.AddComponent<OtherPlayerControllerComponent>();
 
             go.transform.position = Vector3.zero;

@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 namespace ET
 {
+    [FriendClass(typeof (RoleInfosComponent))]
+    [FriendClass(typeof (RoleInfo))]
     [FriendClass(typeof (PlayerControllerComponent))]
     [FriendClass(typeof (GlobalComponent))]
     [FriendClass(typeof (GameObjectComponent))]
@@ -20,6 +23,9 @@ namespace ET
 
             args.Unit.AddComponent<GameObjectComponent>().GameObject = go;
             args.Unit.GetComponent<GameObjectComponent>().SpriteRenderer = go.GetComponent<SpriteRenderer>();
+
+            (go.GetComponent<ReferenceCollector>().GetObject("NameText") as GameObject).GetComponent<TextMeshPro>().text =
+                    args.Unit.ZoneScene().GetComponent<RoleInfosComponent>().RoleInfos[0].Name;
 
             args.Unit.AddComponent<AnimatorComponent>();
 

@@ -884,6 +884,9 @@ namespace ET
 		[ProtoMember(1)]
 		public UnitInfo Unit { get; set; }
 
+		[ProtoMember(2)]
+		public string Name { get; set; }
+
 	}
 
 	[ResponseType(nameof(Chat2C_SendChatInfo))]

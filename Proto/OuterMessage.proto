@@ -419,6 +419,7 @@ message M2C_PlayerStateSynch // IActorMessage
 message M2C_CreateOtherUnit // IActorMessage
 {
 	UnitInfo Unit = 1;
+	string Name = 2;
 }
 
 //ResponseType Chat2C_SendChatInfo

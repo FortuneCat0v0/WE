@@ -102,6 +102,7 @@ namespace ET
         public struct AfterOtherPlayerCreate
         {
             public Unit Unit;
+            public string Name;
         }
         
         public struct MoveStart

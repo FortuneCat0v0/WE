@@ -16,6 +16,7 @@ namespace ET
         }
     }
 
+    [FriendClass(typeof (RoleInfo))]
     [FriendClass(typeof (UnitGateComponent))]
     [FriendClass(typeof (Room))]
     public static class RoomSystem
@@ -60,10 +61,13 @@ namespace ET
                     {
                         // 通知其他玩家客户端创建我
                         MessageHelper.SendToClient(keyValuePair.Value,
-                            new M2C_CreateOtherUnit() { Unit = UnitHelper.CreateUnitInfo(unit) });
+                            new M2C_CreateOtherUnit() { Unit = UnitHelper.CreateUnitInfo(unit), Name = unit.GetComponent<RoleInfo>().Name });
                         // 其我的客户端创建其他玩家
                         MessageHelper.SendToClient(unit,
-                            new M2C_CreateOtherUnit() { Unit = UnitHelper.CreateUnitInfo(keyValuePair.Value) });
+                            new M2C_CreateOtherUnit()
+                            {
+                                Unit = UnitHelper.CreateUnitInfo(keyValuePair.Value), Name = keyValuePair.Value.GetComponent<RoleInfo>().Name
+                            });
                     }
                 }
 

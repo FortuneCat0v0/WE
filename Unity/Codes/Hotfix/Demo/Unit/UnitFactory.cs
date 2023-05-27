@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace ET
 {
@@ -46,7 +47,7 @@ namespace ET
             return unit;
         }
 
-        public static Unit CreateOtherPlayer(Scene currentScene, UnitInfo unitInfo)
+        public static Unit CreateOtherPlayer(Scene currentScene, UnitInfo unitInfo, string name)
         {
             Log.Debug("开始创建其它玩家");
             UnitComponent unitComponent = currentScene.GetComponent<UnitComponent>();
@@ -90,7 +91,7 @@ namespace ET
 
             // unit.AddComponent<XunLuoPathComponent>();
 
-            Game.EventSystem.PublishAsync(new EventType.AfterOtherPlayerCreate { Unit = unit }).Coroutine();
+            Game.EventSystem.PublishAsync(new EventType.AfterOtherPlayerCreate { Unit = unit, Name = name }).Coroutine();
             return unit;
         }
     }

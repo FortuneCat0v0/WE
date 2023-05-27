@@ -4,9 +4,8 @@
     {
         protected override void Run(Session session, M2C_CreateOtherUnit message)
         {
-            
             CurrentScenesComponent currentScenesComponent = session.ZoneScene().GetComponent<CurrentScenesComponent>();
-            Unit unit = UnitFactory.CreateOtherPlayer(currentScenesComponent.Scene,message.Unit);
+            Unit unit = UnitFactory.CreateOtherPlayer(currentScenesComponent.Scene, message.Unit, message.Name);
         }
     }
 }
