@@ -109,6 +109,40 @@ namespace ET
      		}
      	}
 
+		public UnityEngine.UI.Button E_LevelButton
+     	{
+     		get
+     		{
+     			if (this.uiTransform == null)
+     			{
+     				Log.Error("uiTransform is null.");
+     				return null;
+     			}
+     			if( this.m_E_LevelButton == null )
+     			{
+		    		this.m_E_LevelButton = UIFindHelper.FindDeepChild<UnityEngine.UI.Button>(this.uiTransform.gameObject,"E_Level");
+     			}
+     			return this.m_E_LevelButton;
+     		}
+     	}
+
+		public UnityEngine.UI.Image E_LevelImage
+     	{
+     		get
+     		{
+     			if (this.uiTransform == null)
+     			{
+     				Log.Error("uiTransform is null.");
+     				return null;
+     			}
+     			if( this.m_E_LevelImage == null )
+     			{
+		    		this.m_E_LevelImage = UIFindHelper.FindDeepChild<UnityEngine.UI.Image>(this.uiTransform.gameObject,"E_Level");
+     			}
+     			return this.m_E_LevelImage;
+     		}
+     	}
+
 		public void DestroyWidget()
 		{
 			this.m_E_ChatButton = null;
@@ -117,6 +151,8 @@ namespace ET
 			this.m_E_SettingImage = null;
 			this.m_E_FormButton = null;
 			this.m_E_FormImage = null;
+			this.m_E_LevelButton = null;
+			this.m_E_LevelImage = null;
 			this.uiTransform = null;
 		}
 
@@ -126,6 +162,8 @@ namespace ET
 		private UnityEngine.UI.Image m_E_SettingImage = null;
 		private UnityEngine.UI.Button m_E_FormButton = null;
 		private UnityEngine.UI.Image m_E_FormImage = null;
+		private UnityEngine.UI.Button m_E_LevelButton = null;
+		private UnityEngine.UI.Image m_E_LevelImage = null;
 		public Transform uiTransform = null;
 	}
 }

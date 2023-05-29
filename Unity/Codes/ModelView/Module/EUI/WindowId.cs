@@ -13,5 +13,6 @@ namespace ET
 		WindowID_Chat,
 		WindowID_Main,
 		WindowID_Form,
+		WindowID_LevelSelection,
 	}
 }

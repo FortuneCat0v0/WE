@@ -62,5 +62,7 @@ namespace ET
 		 public const ushort M2C_RequestRoomInfos = 10059;
 		 public const ushort C2M_RequestJoinRoom = 10060;
 		 public const ushort M2C_RequestJoinRoom = 10061;
+		 public const ushort C2M_RequestTransferLevel = 10062;
+		 public const ushort M2C_RequestTransferLevel = 10063;
 	}
 }

@@ -479,3 +479,17 @@ message M2C_RequestJoinRoom // IActorLocationResponse
 	int32 Error = 91;
 	string Message = 92;
 }
+
+//ResponseType M2C_RequestTransferLevel
+message C2M_RequestTransferLevel // IActorLocationRequest
+{
+	int32 RpcId = 1;
+	string LevelName = 2;
+}
+
+message M2C_RequestTransferLevel // IActorLocationResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+}
