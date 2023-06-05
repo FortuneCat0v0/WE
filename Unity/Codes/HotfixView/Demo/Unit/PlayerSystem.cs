@@ -19,6 +19,14 @@ namespace ET
         }
     }
 
+    public class PlayerFixedUpdayeSystem: FixedUpdateSystem<Player>
+    {
+        public override void FixedUpdate(Player self)
+        {
+            self.FixedUpdate();
+        }
+    }
+
     public class PlayerDestroySystem: DestroySystem<Player>
     {
         public override void Destroy(Player self)
@@ -45,8 +53,10 @@ namespace ET
         public static void Update(this Player self)
         {
             self.PlayerInput();
+        }
 
-            //TODO 创建FixedUpdate
+        public static void FixedUpdate(this Player self)
+        {
             self.Movement();
         }
 

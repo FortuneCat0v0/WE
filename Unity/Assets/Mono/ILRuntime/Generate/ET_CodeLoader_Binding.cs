@@ -46,7 +46,10 @@ namespace ILRuntime.Runtime.Generated
             app.RegisterCLRFieldGetter(field, get_OnApplicationQuit_3);
             app.RegisterCLRFieldSetter(field, set_OnApplicationQuit_3);
             app.RegisterCLRFieldBinding(field, CopyToStack_OnApplicationQuit_3, AssignFromStack_OnApplicationQuit_3);
-
+            field = type.GetField("FixedUpdate", flag);
+            app.RegisterCLRFieldGetter(field, get_FixedUpdate_4);
+            app.RegisterCLRFieldSetter(field, set_FixedUpdate_4);
+            app.RegisterCLRFieldBinding(field, CopyToStack_FixedUpdate_4, AssignFromStack_FixedUpdate_4);
 
         }
 
@@ -169,7 +172,7 @@ namespace ILRuntime.Runtime.Generated
         {
             ((ET.CodeLoader)o).OnApplicationQuit = (System.Action)v;
         }
-
+        
         static StackObject* AssignFromStack_OnApplicationQuit_3(ref object o, ILIntepreter __intp, StackObject* ptr_of_this_method, IList<object> __mStack)
         {
             ILRuntime.Runtime.Enviorment.AppDomain __domain = __intp.AppDomain;
@@ -177,8 +180,29 @@ namespace ILRuntime.Runtime.Generated
             ((ET.CodeLoader)o).OnApplicationQuit = @OnApplicationQuit;
             return ptr_of_this_method;
         }
+        
+        static object get_FixedUpdate_4(ref object o)
+        {
+            return ((ET.CodeLoader)o).FixedUpdate;
+        }
 
+        static StackObject* CopyToStack_FixedUpdate_4(ref object o, ILIntepreter __intp, StackObject* __ret, IList<object> __mStack)
+        {
+            var result_of_this_method = ((ET.CodeLoader)o).FixedUpdate;
+            return ILIntepreter.PushObject(__ret, __mStack, result_of_this_method);
+        }
 
+        static void set_FixedUpdate_4(ref object o, object v)
+        {
+            ((ET.CodeLoader)o).FixedUpdate = (System.Action)v;
+        }
 
+        static StackObject* AssignFromStack_FixedUpdate_4(ref object o, ILIntepreter __intp, StackObject* ptr_of_this_method, IList<object> __mStack)
+        {
+            ILRuntime.Runtime.Enviorment.AppDomain __domain = __intp.AppDomain;
+            System.Action @FixedUpdate = (System.Action)typeof(System.Action).CheckCLRTypes(StackObject.ToObject(ptr_of_this_method, __domain, __mStack), (CLR.Utils.Extensions.TypeFlags)8);
+            ((ET.CodeLoader)o).FixedUpdate = @FixedUpdate;
+            return ptr_of_this_method;
+        }
     }
 }

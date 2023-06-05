@@ -39,6 +39,11 @@ namespace ET
             TimeInfo.Update();
             EventSystem.Update();
         }
+
+        public static void FixedUpdate()
+        {
+            EventSystem.FixedUpdate();
+        }
         
         public static void LateUpdate()
         {

@@ -81,6 +81,9 @@ namespace ET
 
         private Queue<long> updates = new Queue<long>();
         private Queue<long> updates2 = new Queue<long>();
+        
+        private Queue<long> fixedUpdates = new Queue<long>();
+        private Queue<long> fixedUpdates2 = new Queue<long>();
 
         private Queue<long> loaders = new Queue<long>();
         private Queue<long> loaders2 = new Queue<long>();
@@ -230,6 +233,14 @@ namespace ET
                 if (oneTypeSystems.ContainsKey(typeof (IUpdateSystem)))
                 {
                     this.updates.Enqueue(component.InstanceId);
+                }
+            }
+            
+            if (component is IFixedUpdate)
+            {
+                if (oneTypeSystems.ContainsKey(typeof (IFixedUpdateSystem)))
+                {
+                    this.fixedUpdates.Enqueue(component.InstanceId);
                 }
             }
 
@@ -584,6 +595,46 @@ namespace ET
             }
 
             ObjectHelper.Swap(ref this.updates, ref this.updates2);
+        }
+        public void FixedUpdate()
+        {
+            while (this.fixedUpdates.Count > 0)
+            {
+                long instanceId = this.fixedUpdates.Dequeue();
+                Entity component;
+                if (!this.allEntities.TryGetValue(instanceId, out component))
+                {
+                    continue;
+                }
+
+                if (component.IsDisposed)
+                {
+                    continue;
+                }
+
+                List<object> iUpdateSystems = this.typeSystems.GetSystems(component.GetType(), typeof (IFixedUpdateSystem));
+                if (iUpdateSystems == null)
+                {
+                    continue;
+                }
+
+                this.fixedUpdates2.Enqueue(instanceId);
+
+                for (int i = 0; i < iUpdateSystems.Count; ++i)
+                {
+                    IFixedUpdateSystem iUpdateSystem = iUpdateSystems[i] as IFixedUpdateSystem;
+                    try
+                    {
+                        iUpdateSystem.Run(component);
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Error(e);
+                    }
+                }
+            }
+
+            ObjectHelper.Swap(ref this.fixedUpdates, ref this.fixedUpdates2);
         }
 
         public void LateUpdate()

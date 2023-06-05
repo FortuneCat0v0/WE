@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using UnityEngine;
 
 namespace ET
@@ -49,6 +50,11 @@ namespace ET
 		private void Update()
 		{
 			CodeLoader.Instance.Update();
+		}
+
+		private void FixedUpdate()
+		{
+			CodeLoader.Instance.FixedUpdate();
 		}
 
 		private void LateUpdate()

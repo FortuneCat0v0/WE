@@ -2,8 +2,8 @@
 
 namespace ET
 {
-    [ComponentOf(typeof(Unit))]
-    public class Player: Entity, IAwake, IUpdate, IDestroy
+    [ComponentOf(typeof (Unit))]
+    public class Player: Entity, IAwake, IUpdate, IFixedUpdate, IDestroy
     {
         public Rigidbody2D Rigidbody2D;
         public float speed;
