@@ -27,7 +27,7 @@ namespace ET
             self.groundLayer = LayerMask.GetMask("Ground");
 
             // 注册按键
-            self.InputControl.Gameplay.Jump.started += self.Jump;
+            // self.InputControl.Gameplay.Jump.started += self.Jump;
         }
     }
 
