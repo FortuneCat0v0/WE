@@ -42,7 +42,16 @@ namespace ET
 
             // 添加相机跟随
             // CinemachineBrain cinemachineBrain = GameObject.Find("/Global/MainCamera").AddComponent<CinemachineBrain>();
-            // GameObject.Find("/Global/CM vcam1").GetComponent<CinemachineVirtualCamera>().Follow = go.transform;
+            CinemachineVirtualCamera cinemachineVirtualCamera = GameObject.Find("/Global/CM vcam1").GetComponent<CinemachineVirtualCamera>();
+            cinemachineVirtualCamera.Follow = go.transform;
+            cinemachineVirtualCamera.LookAt = go.transform; 
+
+            // 设置相机边界
+            PolygonCollider2D confinerShape = GameObject.FindGameObjectWithTag("BoundsConfiner").GetComponent<PolygonCollider2D>();
+            CinemachineConfiner confiner = GameObject.Find("/Global/CM vcam1").GetComponent<CinemachineConfiner>();
+            confiner.m_BoundingShape2D = confinerShape;
+            // Call this if the bounding shape's point change at runtime
+            confiner.InvalidatePathCache();
 
             await ETTask.CompletedTask;
         }

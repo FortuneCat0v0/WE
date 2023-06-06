@@ -109,7 +109,7 @@ namespace ET
                         reply();
 
                         StartSceneConfig startSceneConfig = StartSceneConfigCategory.Instance.GetBySceneName(session.DomainZone(), "Game");
-                        await TransferHelper.Transfer(unit, startSceneConfig.InstanceId, "MainScene");
+                        await TransferHelper.Transfer(unit, startSceneConfig.InstanceId, "01.Field");
 
                         SessionStateComponent SessionStateComponent = session.GetComponent<SessionStateComponent>();
                         if (SessionStateComponent == null)
