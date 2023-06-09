@@ -42,15 +42,24 @@
   </PropertyGroup>
   <ItemGroup>
      <Folder Include="Assets\Plugins\Android" />
+     <Folder Include="Assets\Plugins\Demigiant\DemiLib\Core" />
+     <None Include="Assets\Plugins\Demigiant\readme_DOTweenPro.txt" />
      <Folder Include="Assets\Plugins\MacOS" />
+     <Folder Include="Assets\Plugins\Demigiant" />
+     <Folder Include="Assets\Plugins\Demigiant\DOTween" />
      <Folder Include="Assets\Plugins" />
      <Folder Include="Assets\Plugins\Android\libs\x86" />
      <Folder Include="Assets\Plugins\Android\libs\arm64-v8a" />
      <Folder Include="Assets\Plugins\Android\libs\armeabi-v7a" />
+     <Folder Include="Assets\Plugins\Demigiant\DOTweenPro Examples\Examples Assets" />
+     <Folder Include="Assets\Plugins\Demigiant\DemiLib" />
      <Folder Include="Assets\Plugins\iOS" />
      <Folder Include="Assets\Plugins\x86" />
+     <None Include="Assets\Plugins\Demigiant\DemiLib\Core\DemiLib.xml" />
      <Folder Include="Assets\Plugins\Android\libs" />
+     <None Include="Assets\Plugins\Demigiant\DOTween\readme.txt" />
      <Folder Include="Assets\Plugins\x86_64" />
+     <Folder Include="Assets\Plugins\Demigiant\DOTweenPro Examples" />
      <Reference Include="UnityEngine">
      <HintPath>D:\UnityHub\Editor\2021.3.23f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
