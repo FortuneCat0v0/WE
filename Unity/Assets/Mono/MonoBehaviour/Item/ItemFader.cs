@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-
-// [RequireComponent(typeof (SpriteRenderer))]
+[RequireComponent(typeof (SpriteRenderer))]
 public class ItemFader: MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
@@ -20,7 +19,13 @@ public class ItemFader: MonoBehaviour
     /// </summary>
     public void FadeIn()
     {
-        Color targetColor = new Color(1, 1, 1, 1); 
-        // this.spriteRenderer.DOColor()
+        Color targetColor = new Color(1, 1, 1, 1);
+        this.spriteRenderer.DOColor(targetColor, Settings.fadeDuration);
+    }
+
+    public void FadeOut()
+    {
+        Color targetColor = new Color(1, 1, 1, Settings.targetAlpha);
+        this.spriteRenderer.DOColor(targetColor, Settings.fadeDuration);
     }
 }
