@@ -41,7 +41,7 @@ namespace ET
             self.ZoneScene().GetComponent<BagComponent>().ItemsMap.TryGetValue((int)self.CurrentItemType, out List<Item> itemList);
 
             int showCount = itemList == null? 0 : itemList.Count - (self.CurrentPageIndex * 30);
-            showCount = showCount > 30? 30 : showCount;
+            showCount = showCount > 20? 20 : showCount;
             self.AddUIScrollItems(ref self.ScrollItemBagItems, showCount);
             self.View.E_BagItemsLoopVerticalScrollRect.SetVisible(true, showCount);
         }
