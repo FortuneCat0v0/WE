@@ -86,6 +86,7 @@ namespace ET
                         return;
                     }
                     self.ZoneScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Main);
+                    self.ZoneScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_ActionBar);
                 }
                 else
                 {

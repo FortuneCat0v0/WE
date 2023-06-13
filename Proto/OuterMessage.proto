@@ -493,3 +493,92 @@ message M2C_RequestTransferLevel // IActorLocationResponse
 	int32 Error = 91;
 	string Message = 92;
 }
+
+
+message ItemInfo
+{
+	int64 ItemUid      = 1;
+	int32 ItemConfigId = 2;
+	int32 ItemQuality  = 3;
+	
+	EquipInfoProto EquipInfo = 4; 
+}
+
+message M2C_AllItemsList // IActorMessage
+{
+	int32 RpcId = 90;
+	repeated ItemInfo ItemInfoList = 1;
+	int32    ContainerType = 2;
+}
+
+message M2C_ItemUpdateOpInfo // IActorMessage
+{
+	int32 RpcId = 90;
+	ItemInfo ItemInfo = 1;
+	int32    Op       = 2;
+	int32    ContainerType = 3;
+}
+
+message AttributeEntryProto
+{
+	int64 Id = 1;
+	int32 Key = 2;
+	int64 Value = 3;
+	int32 EntryType = 4;
+}
+
+message EquipInfoProto
+{
+	int64 Id    = 1;
+	int32 Score = 2;
+	repeated AttributeEntryProto AttributeEntryProtoList = 3;
+}
+
+//ResponseType M2C_SellItem
+message C2M_SellItem // IActorLocationRequest
+{
+	int32 RpcId = 1;
+	int64 ItemUid = 2;
+}
+
+message M2C_SellItem // IActorLocationResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+}
+
+//ResponseType M2C_EquipItem
+message C2M_EquipItem // IActorLocationRequest
+{
+	int32 RpcId = 1;
+	int64 ItemUid = 2;
+}
+
+message M2C_EquipItem // IActorLocationResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+}
+
+//ResponseType M2C_UnloadEquipItem
+message C2M_UnloadEquipItem // IActorLocationRequest
+{
+	int32 RpcId = 1;
+	int32 EquipPosition = 2;
+}
+
+message M2C_UnloadEquipItem // IActorLocationResponse
+{
+	int32 RpcId = 90;
+	int32 Error = 91;
+	string Message = 92;
+}
+
+// ----测试消息------
+message C2M_TestAddItem // IActorLocationMessage
+{
+	int32 RpcId = 90;
+	int ItemConfig = 1;
+}

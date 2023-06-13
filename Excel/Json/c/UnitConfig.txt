@@ -1,3 +1,4 @@
 {"list":[
-{"_t":"UnitConfig","_id":1001,"Type":1,"Name":"角色01","Desc":"测试角色","MaxHP":0,"DamageValue":0,"PrefabName":"Player"},
+{"_t":"UnitConfig","_id":1001,"Type":1,"Name":"角色01","Desc":"测试角色","PrefabName":"Player","Sprite":""},
+{"_t":"UnitConfig","_id":1002,"Type":4,"Name":"世界物品","Desc":"处于世界上的遗落物品","PrefabName":"","Sprite":""},
 ]}

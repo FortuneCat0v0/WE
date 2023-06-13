@@ -104,6 +104,10 @@ namespace ET
             public Unit Unit;
             public string Name;
         }
+        public struct AfterWorldItemCreate
+        {
+            public Unit Unit;
+        }
         
         public struct MoveStart
         {

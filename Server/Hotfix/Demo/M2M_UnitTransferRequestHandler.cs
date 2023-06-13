@@ -18,17 +18,22 @@ namespace ET
             // Room room = roomComponent.CreateRoom(unit);
 
             unit.AddComponent<UnitDBSaveComponent>();
-            unit.AddComponent<MailBoxComponent>();
+            
             foreach (Entity entity in request.Entitys)
             {
                 unit.AddComponent(entity);
             }
-
+            
+            unit.AddComponent<MailBoxComponent>();
+            
             // 通知客户端创建My Unit
             M2C_CreateMyUnit m2CCreateUnits = new M2C_CreateMyUnit();
             m2CCreateUnits.Unit = UnitHelper.CreateUnitInfo(unit);
             MessageHelper.SendToClient(unit, m2CCreateUnits);
 
+            //通知客户端同步背包信息
+            ItemUpdateNoticeHelper.SyncAllBagItems(unit);
+            
             response.NewInstanceId = unit.InstanceId;
 
             reply();

@@ -1,0 +1,15 @@
+{"list":[
+{"_t":"EntryRandomConfig","_id":1,"EntryRandMinCount":1,"EntryRandMaxCount":1,"SpecialEntryRandMinCount":1,"SpecialEntryRandMaxCount":1,"EntryLevel":1,"SpecialEntryLevel":1},
+{"_t":"EntryRandomConfig","_id":2,"EntryRandMinCount":2,"EntryRandMaxCount":2,"SpecialEntryRandMinCount":2,"SpecialEntryRandMaxCount":2,"EntryLevel":1,"SpecialEntryLevel":1},
+{"_t":"EntryRandomConfig","_id":3,"EntryRandMinCount":2,"EntryRandMaxCount":2,"SpecialEntryRandMinCount":2,"SpecialEntryRandMaxCount":2,"EntryLevel":1,"SpecialEntryLevel":1},
+{"_t":"EntryRandomConfig","_id":4,"EntryRandMinCount":2,"EntryRandMaxCount":2,"SpecialEntryRandMinCount":2,"SpecialEntryRandMaxCount":2,"EntryLevel":2,"SpecialEntryLevel":2},
+{"_t":"EntryRandomConfig","_id":5,"EntryRandMinCount":2,"EntryRandMaxCount":2,"SpecialEntryRandMinCount":2,"SpecialEntryRandMaxCount":2,"EntryLevel":2,"SpecialEntryLevel":2},
+{"_t":"EntryRandomConfig","_id":6,"EntryRandMinCount":2,"EntryRandMaxCount":2,"SpecialEntryRandMinCount":2,"SpecialEntryRandMaxCount":2,"EntryLevel":2,"SpecialEntryLevel":2},
+{"_t":"EntryRandomConfig","_id":7,"EntryRandMinCount":2,"EntryRandMaxCount":2,"SpecialEntryRandMinCount":2,"SpecialEntryRandMaxCount":2,"EntryLevel":2,"SpecialEntryLevel":2},
+{"_t":"EntryRandomConfig","_id":8,"EntryRandMinCount":2,"EntryRandMaxCount":2,"SpecialEntryRandMinCount":2,"SpecialEntryRandMaxCount":2,"EntryLevel":3,"SpecialEntryLevel":3},
+{"_t":"EntryRandomConfig","_id":9,"EntryRandMinCount":2,"EntryRandMaxCount":2,"SpecialEntryRandMinCount":2,"SpecialEntryRandMaxCount":2,"EntryLevel":3,"SpecialEntryLevel":3},
+{"_t":"EntryRandomConfig","_id":10,"EntryRandMinCount":2,"EntryRandMaxCount":2,"SpecialEntryRandMinCount":2,"SpecialEntryRandMaxCount":2,"EntryLevel":3,"SpecialEntryLevel":3},
+{"_t":"EntryRandomConfig","_id":11,"EntryRandMinCount":2,"EntryRandMaxCount":2,"SpecialEntryRandMinCount":2,"SpecialEntryRandMaxCount":2,"EntryLevel":3,"SpecialEntryLevel":3},
+{"_t":"EntryRandomConfig","_id":12,"EntryRandMinCount":2,"EntryRandMaxCount":2,"SpecialEntryRandMinCount":2,"SpecialEntryRandMaxCount":2,"EntryLevel":3,"SpecialEntryLevel":3},
+{"_t":"EntryRandomConfig","_id":13,"EntryRandMinCount":2,"EntryRandMaxCount":2,"SpecialEntryRandMinCount":2,"SpecialEntryRandMaxCount":2,"EntryLevel":3,"SpecialEntryLevel":3},
+]}

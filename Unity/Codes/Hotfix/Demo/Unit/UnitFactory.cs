@@ -94,5 +94,15 @@ namespace ET
             Game.EventSystem.PublishAsync(new EventType.AfterOtherPlayerCreate { Unit = unit, Name = name }).Coroutine();
             return unit;
         }
+
+        public static Unit CreateWorldItem(Scene currentScene, UnitInfo unitInfo)
+        {
+            Log.Debug("开始创建物品");
+            UnitComponent unitComponent = currentScene.GetComponent<UnitComponent>();
+            Unit unit = unitComponent.AddChildWithId<Unit, int>(unitInfo.UnitId, unitInfo.ConfigId);
+            unitComponent.Add(unit);
+            Game.EventSystem.PublishAsync(new EventType.AfterWorldItemCreate() { Unit = unit }).Coroutine();
+            return unit;
+        }
     }
 }

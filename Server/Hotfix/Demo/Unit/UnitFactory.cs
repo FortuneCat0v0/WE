@@ -35,6 +35,15 @@ namespace ET
                         }
                     }
 
+                    unit.AddComponent<BagComponent>();
+                    
+                    unitComponent.Add(unit);
+                    return unit;
+                }
+                case UnitType.WorldItem:
+                {
+                    Unit unit = unitComponent.AddChildWithId<Unit, int>(id, 1002);
+
                     unitComponent.Add(unit);
                     return unit;
                 }

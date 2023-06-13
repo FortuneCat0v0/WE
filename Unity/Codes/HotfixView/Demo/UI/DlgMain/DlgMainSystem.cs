@@ -14,6 +14,7 @@ namespace ET
             self.View.E_ChatButton.AddListener(self.OnChatHandler);
             self.View.E_FormButton.AddListener(self.OnFormHandler);
             self.View.E_LevelButton.AddListener(self.OnLevelHandler);
+            self.View.E_TestButton.AddListener(self.OnTestHandler);
         }
 
         public static void ShowWindow(this DlgMain self, Entity contextData = null)
@@ -33,6 +34,10 @@ namespace ET
         public static void OnLevelHandler(this DlgMain self)
         {
             self.ZoneScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_LevelSelection);
+        }
+        public static void OnTestHandler(this DlgMain self)
+        {
+            self.ZoneScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Test);
         }
     }
 }

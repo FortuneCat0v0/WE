@@ -1,0 +1,5 @@
+{"list":[
+{"_t":"ItemConfig","_id":1001,"Name":"土豆种子","Desc":"普通的土豆种子","Type":0,"EquipPosition":0,"Icon":"icon_PotatoSeed","OnWorldSprite":"PotatoSeed_hold","MaxSumCount":99,"EntryRandomId":1,"SellBasePrice":100,"UseRadius":0,"CanPickedup":0,"CanDropped":0,"CanCarried":0},
+{"_t":"ItemConfig","_id":2001,"Name":"土豆","Desc":"普通的土豆","Type":1,"EquipPosition":0,"Icon":"icon_Potato","OnWorldSprite":"","MaxSumCount":99,"EntryRandomId":1,"SellBasePrice":100,"UseRadius":0,"CanPickedup":0,"CanDropped":0,"CanCarried":0},
+{"_t":"ItemConfig","_id":3001,"Name":"凳子","Desc":"普通凳子","Type":2,"EquipPosition":0,"Icon":"","OnWorldSprite":"","MaxSumCount":0,"EntryRandomId":0,"SellBasePrice":0,"UseRadius":0,"CanPickedup":0,"CanDropped":0,"CanCarried":0},
+]}

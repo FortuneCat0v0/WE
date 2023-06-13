@@ -87,12 +87,6 @@ namespace ET
 		/// <summary>描述</summary>
 		[ProtoMember(4)]
 		public string Desc { get; set; }
-		/// <summary>最大生命值</summary>
-		[ProtoMember(5)]
-		public int MaxHP { get; set; }
-		/// <summary>攻击伤害值</summary>
-		[ProtoMember(6)]
-		public int DamageValue { get; set; }
 
 	}
 }

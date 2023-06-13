@@ -40,5 +40,10 @@ namespace ET
         public const int ERR_RoomIsFullError         = 200026; //房间人数满了
         public const int ERR_RoomHavedPlayer         = 200027; //房间已经存在该玩家
         public const int ERR_RoomIsNull              = 200028; //不存在该房间
+
+        public const int ERR_ItemNotExist = 200039;
+        public const int ERR_BagMaxLoad = 200040;
+        public const int ERR_EquipItemError = 200041;
+        public const int ERR_AddBagItemError = 200042;
     }
 }

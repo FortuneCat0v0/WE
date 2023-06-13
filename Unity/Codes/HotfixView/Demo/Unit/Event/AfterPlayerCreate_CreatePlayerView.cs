@@ -34,7 +34,7 @@ namespace ET
             //
             // args.Unit.AddComponent<PlayerControllerComponent>();
             //
-            // args.Unit.AddComponent<PlayerToHallInteractionComponent, GameObject>(go);
+            args.Unit.AddComponent<PlayerInteractionComponent, GameObject>(go);
             //
             // go.transform.position = Vector3.zero;
             // args.Unit.Position = args.Unit.Type == UnitType.Player? new Vector3(-1.5f, 10.0f, 0)

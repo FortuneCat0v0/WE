@@ -14,5 +14,9 @@ namespace ET
 		WindowID_Main,
 		WindowID_Form,
 		WindowID_LevelSelection,
+		WindowID_Test,
+		WindowID_Bag,
+		WindowID_ItemPopUp,
+		WindowID_ActionBar,
 	}
 }
